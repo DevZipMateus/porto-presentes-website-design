@@ -1,5 +1,17 @@
 
 export const Contact = () => {
+  const handleWhatsAppClick = () => {
+    const message = "Olá! Vim através do site e gostaria de saber mais sobre os produtos da Porto Presentes e Souvenirs.";
+    const whatsappUrl = `https://wa.me/5547996773591?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleQuoteClick = () => {
+    const message = "Olá! Gostaria de solicitar um orçamento para souvenirs personalizados.";
+    const whatsappUrl = `https://wa.me/5547996773591?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section id="contato" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,12 +43,12 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">Email</h4>
-                  <a 
-                    href="mailto:portopresentes@portopresentes.com" 
-                    className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                  <button 
+                    onClick={handleWhatsAppClick}
+                    className="text-gray-600 hover:text-gray-900 transition-colors duration-200 cursor-pointer"
                   >
                     portopresentes@portopresentes.com
-                  </a>
+                  </button>
                 </div>
               </div>
 
@@ -46,14 +58,12 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">WhatsApp</h4>
-                  <a 
-                    href="https://wa.me/5547996773591" 
-                    className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button 
+                    onClick={handleWhatsAppClick}
+                    className="text-gray-600 hover:text-gray-900 transition-colors duration-200 cursor-pointer"
                   >
                     (47) 99677-3591 - Carol
-                  </a>
+                  </button>
                   <p className="text-sm text-gray-500">Representante interna</p>
                 </div>
               </div>
@@ -77,15 +87,13 @@ export const Contact = () => {
               <p className="text-gray-600 mb-4">
                 Envie-nos suas necessidades e receba um orçamento personalizado em até 24 horas.
               </p>
-              <a
-                href="https://wa.me/5547996773591?text=Olá! Gostaria de solicitar um orçamento para souvenirs personalizados."
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={handleQuoteClick}
                 className="inline-flex items-center bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors duration-300 font-medium"
               >
                 <span className="mr-2">💬</span>
                 Orçamento via WhatsApp
-              </a>
+              </button>
             </div>
           </div>
 
