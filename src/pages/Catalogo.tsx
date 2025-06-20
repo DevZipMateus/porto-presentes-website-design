@@ -60,6 +60,56 @@ const Catalogo = () => {
       id: 10,
       image: "/lovable-uploads/b0c7d8c2-0d96-490c-a637-4a4f249fa5da.png",
       title: "Canecas Regionais - Linha Verde"
+    },
+    {
+      id: 11,
+      image: "/lovable-uploads/af2c9f18-6627-4e02-aa0b-02ae8a7d07f0.png",
+      title: "Canecas Temáticas Rosa - Cristo Redentor, Bondinho e Praia"
+    },
+    {
+      id: 12,
+      image: "/lovable-uploads/af874fcf-1d94-434c-b9f0-a1093824eb74.png",
+      title: "Canecas Regionais Transparentes - Diferentes Cores"
+    },
+    {
+      id: 13,
+      image: "/lovable-uploads/cf5c586a-141b-4fd2-9233-59c0a7aa916b.png",
+      title: "Canecas Azuis e Amarelas - Linha Regional"
+    },
+    {
+      id: 14,
+      image: "/lovable-uploads/2be2ec80-7d40-4363-9fd1-8661752b2034.png",
+      title: "Canecas Azuis e Roxas - Linha Regional"
+    },
+    {
+      id: 15,
+      image: "/lovable-uploads/aed827c9-398f-4986-8d20-c9e9072edc41.png",
+      title: "Canecas Pretas Temáticas - Linha Premium"
+    },
+    {
+      id: 16,
+      image: "/lovable-uploads/6239ecfd-2724-4ddb-8521-ca8280263273.png",
+      title: "Canecas Brancas Temáticas - Linha Clássica"
+    },
+    {
+      id: 17,
+      image: "/lovable-uploads/be4bd2f8-2128-4cbe-8257-36d30d5ede96.png",
+      title: "Canecas Pretas - Linha Temática Especial"
+    },
+    {
+      id: 18,
+      image: "/lovable-uploads/6f8c1404-6dd3-41d7-a1a5-b16338be6828.png",
+      title: "Canecas Azuis - Linha Regional Especial"
+    },
+    {
+      id: 19,
+      image: "/lovable-uploads/d9dbb97c-7d73-41a9-a8ea-783372009ada.png",
+      title: "Canecas Azuis e Amarelas - Mix Regional"
+    },
+    {
+      id: 20,
+      image: "/lovable-uploads/eecd52fe-d390-40b8-8e6a-adce7a817831.png",
+      title: "Canecas Amarelas - Linha Regional Completa"
     }
   ];
 
