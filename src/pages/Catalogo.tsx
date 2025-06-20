@@ -259,6 +259,56 @@ const Catalogo = () => {
       id: 50,
       image: "/lovable-uploads/eca2f232-736a-4722-8153-beabca94f3e3.png",
       title: "Taças Elegantes - Temas Regionais Premium"
+    },
+    {
+      id: 51,
+      image: "/lovable-uploads/5c541bd7-ac87-4720-acfe-6c153a22b8f8.png",
+      title: "Copos Cerveja Premium - Temas Urbanos e Regionais"
+    },
+    {
+      id: 52,
+      image: "/lovable-uploads/3d3543b5-d0f6-43e1-998b-46c2798e2592.png",
+      title: "Copos Cerveja - Aventura, Urban Art e Balneário Camboriú"
+    },
+    {
+      id: 53,
+      image: "/lovable-uploads/1a566ecc-61a7-4fcd-8096-81e361f77cc3.png",
+      title: "Taças Premium - Urban Art e Eu Amo Balneário Camboriú"
+    },
+    {
+      id: 54,
+      image: "/lovable-uploads/1faa01e0-3114-4bae-b3ea-f3b23e99eaea.png",
+      title: "Taças Elegantes - Aventura Tropical e Oceânica"
+    },
+    {
+      id: 55,
+      image: "/lovable-uploads/14005bf4-7a6f-4c09-bc7d-f713f74c8f29.png",
+      title: "Canecas de Vidro com Alça - Temas Urbanos e Regionais"
+    },
+    {
+      id: 56,
+      image: "/lovable-uploads/e1c987d1-2bd3-4557-8c96-7d06f82157dd.png",
+      title: "Canecas de Vidro - Eu Amo Balneário Camboriú e Cristo Luz"
+    },
+    {
+      id: 57,
+      image: "/lovable-uploads/3787fe94-b7f5-40e4-915d-57b630c44d56.png",
+      title: "Canecas de Vidro - Aventura Marítima e Oceânica"
+    },
+    {
+      id: 58,
+      image: "/lovable-uploads/6a7c01a3-5611-40c4-bb7b-d98af184ac4c.png",
+      title: "Canecas Esmaltadas - Urban Art, Eu Amo BC e Cristo Luz"
+    },
+    {
+      id: 59,
+      image: "/lovable-uploads/7022817a-858a-423d-9232-38739a8033bf.png",
+      title: "Canecas Esmaltadas Mix - Temas Urbanos e Aventura"
+    },
+    {
+      id: 60,
+      image: "/lovable-uploads/be489c7f-f0df-4aa3-b982-69e2a07afada.png",
+      title: "Canecas Brancas Clássicas - Coleção Completa Regional"
     }
   ];
 
