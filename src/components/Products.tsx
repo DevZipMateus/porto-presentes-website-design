@@ -1,7 +1,25 @@
-import { useState } from 'react';
+
+import { useState, useEffect } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import type { CarouselApi } from "@/components/ui/carousel";
+
 export const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [api, setApi] = useState<CarouselApi>();
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    const interval = setInterval(() => {
+      api.scrollNext()
+    }, 3000) // Change slide every 3 seconds
+
+    return () => clearInterval(interval)
+  }, [api])
+
   const productCategories = [{
     title: "Souvenirs Regionais",
     description: "Produtos que representam a cultura e tradições locais",
@@ -50,6 +68,7 @@ export const Products = () => {
     image: "🏢",
     items: ["Brindes empresariais", "Produtos para eventos", "Itens promocionais", "Presentes corporativos"]
   }];
+
   return <section id="produtos" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -66,7 +85,14 @@ export const Products = () => {
         <div className="mb-20">
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Galeria de Produtos</h3>
           
-          <Carousel className="w-full max-w-5xl mx-auto">
+          <Carousel 
+            className="w-full max-w-5xl mx-auto"
+            setApi={setApi}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
             <CarouselContent>
               <CarouselItem className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
