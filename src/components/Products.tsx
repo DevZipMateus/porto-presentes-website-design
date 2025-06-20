@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, Carousel Previous } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import type { CarouselApi } from "@/components/ui/carousel";
 
 export const Products = () => {
