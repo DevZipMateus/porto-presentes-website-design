@@ -409,6 +409,51 @@ const Catalogo = () => {
       id: 80,
       image: "/lovable-uploads/87500dfb-6a04-4fc0-a9dc-75d04bc6e336.png",
       title: "Canecas Azul Claro Mix - Eu Amo B. Camboriú e Adventure"
+    },
+    {
+      id: 81,
+      image: "/lovable-uploads/24f7a091-7417-407c-be43-7e839f9a8ac7.png",
+      title: "Canecas Arte em Faixa - Linha Preta e Azul Regional"
+    },
+    {
+      id: 82,
+      image: "/lovable-uploads/6ef933b1-b903-43e1-a912-3188ce631ff0.png",
+      title: "Canecas Arte em Faixa - Mix Colorido Azul e Amarelo"
+    },
+    {
+      id: 83,
+      image: "/lovable-uploads/e489c10a-7132-4660-b145-c8a48ca01755.png",
+      title: "Canecas Arte em Faixa - Mix Verde e Roxo Regional"
+    },
+    {
+      id: 84,
+      image: "/lovable-uploads/f8181526-68a6-4c25-bf07-6c4d87f1c4b6.png",
+      title: "Canecas Arte em Faixa - Mix Roxo e Rosa Temático"
+    },
+    {
+      id: 85,
+      image: "/lovable-uploads/34998fc9-ab97-4bba-8d8a-1630ee1421fd.png",
+      title: "Canecas Amarelas Temáticas - Eu Amo BC, Cristo Luz, Big Wheel e Tesouro Pirata"
+    },
+    {
+      id: 86,
+      image: "/lovable-uploads/9f5bb055-da78-44cd-94ac-b58f66f5de52.png",
+      title: "Canecas Brancas Temáticas - Big Wheel, Tesouro Pirata, Aventura Jurássica e Space Adventure"
+    },
+    {
+      id: 87,
+      image: "/lovable-uploads/d003db86-2134-4552-ae40-9dbd385e2038.png",
+      title: "Canecas Verdes Temáticas - Big Wheel, Tesouro Pirata, Aventura Jurássica e Space Adventure"
+    },
+    {
+      id: 88,
+      image: "/lovable-uploads/45fc008d-97da-4b4d-9430-f222043f87d0.png",
+      title: "Canecas Roxas Temáticas - Big Wheel, Tesouro Pirata, Aventura Jurássica e Space Adventure"
+    },
+    {
+      id: 89,
+      image: "/lovable-uploads/4dc816f2-cf31-4564-94d7-61d697b85b3b.png",
+      title: "Canecas Rosa Temáticas - Big Wheel, Tesouro Pirata, Aventura Jurássica e Space Adventure"
     }
   ];
 
