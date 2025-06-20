@@ -309,6 +309,56 @@ const Catalogo = () => {
       id: 60,
       image: "/lovable-uploads/be489c7f-f0df-4aa3-b982-69e2a07afada.png",
       title: "Canecas Brancas Clássicas - Coleção Completa Regional"
+    },
+    {
+      id: 61,
+      image: "/lovable-uploads/304017e1-5a3a-4705-85ad-d2ba6aa64b16.png",
+      title: "Canecas Brancas - Cristo Luz, Bondinho e Big Wheel"
+    },
+    {
+      id: 62,
+      image: "/lovable-uploads/7017e857-eedb-4f79-a3a8-69b7117282b4.png",
+      title: "Pratos Decorativos - Bondinho, Big Wheel, Aventura e Space"
+    },
+    {
+      id: 63,
+      image: "/lovable-uploads/e322afa8-b341-459d-b991-9e844b2676f4.png",
+      title: "Pratos Decorativos - Balneário Camboriú Premium"
+    },
+    {
+      id: 64,
+      image: "/lovable-uploads/b2285d5f-fa9d-4432-ba03-6a4d7e9bfc19.png",
+      title: "Pratos Decorativos - Balneário Camboriú Coloridos"
+    },
+    {
+      id: 65,
+      image: "/lovable-uploads/2f49f41e-4661-4035-8c4b-df191e8f0564.png",
+      title: "Pratos Decorativos - Eu Amo B. Camboriú e Cristo Luz"
+    },
+    {
+      id: 66,
+      image: "/lovable-uploads/7903bd41-e2e0-4394-9fd3-e4d9e2ade738.png",
+      title: "Pratos Decorativos - Bondinho e Big Wheel Elegantes"
+    },
+    {
+      id: 67,
+      image: "/lovable-uploads/f1918f1a-4ba9-4e3f-be58-9621bc8499a8.png",
+      title: "Pratos Decorativos - Aventura Jurássica e Space Adventure"
+    },
+    {
+      id: 68,
+      image: "/lovable-uploads/fb3da711-167c-409d-99dd-e6a93801f72c.png",
+      title: "Canecas Coloridas Balneário Camboriú - Primeira Linha"
+    },
+    {
+      id: 69,
+      image: "/lovable-uploads/173b1728-bb9f-47e3-b6e0-cfc012cd56d6.png",
+      title: "Canecas Coloridas Balneário Camboriú - Segunda Linha"
+    },
+    {
+      id: 70,
+      image: "/lovable-uploads/60c32748-6151-44f9-a536-469d244fa2d5.png",
+      title: "Canecas Pretas Especiais - Mix Temático Regional"
     }
   ];
 
