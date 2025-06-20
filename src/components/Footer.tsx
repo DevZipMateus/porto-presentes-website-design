@@ -2,6 +2,18 @@
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const handleWhatsAppClick = () => {
+    const message = "Olá! Vim através do site e gostaria de saber mais sobre os produtos da Porto Presentes e Souvenirs.";
+    const whatsappUrl = `https://wa.me/5547996773591?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleEmailClick = () => {
+    const message = "Olá! Vim através do site e gostaria de entrar em contato sobre os produtos da Porto Presentes e Souvenirs.";
+    const whatsappUrl = `https://wa.me/5547996773591?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,12 +29,12 @@ export const Footer = () => {
               Desde 2022 conectando lojistas a produtos únicos e memoráveis.
             </p>
             <div className="flex space-x-4">
-              <a href="mailto:portopresentes@portopresentes.com" className="text-gray-300 hover:text-white transition-colors duration-200">
+              <button onClick={handleEmailClick} className="text-gray-300 hover:text-white transition-colors duration-200">
                 📧 Email
-              </a>
-              <a href="https://wa.me/5547996773591" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-200">
+              </button>
+              <button onClick={handleWhatsAppClick} className="text-gray-300 hover:text-white transition-colors duration-200">
                 📱 WhatsApp
-              </a>
+              </button>
             </div>
           </div>
 
@@ -76,14 +88,14 @@ export const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Contato</h3>
             <ul className="space-y-2 text-gray-300">
               <li>
-                <a href="mailto:portopresentes@portopresentes.com" className="hover:text-white transition-colors duration-200">
+                <button onClick={handleEmailClick} className="hover:text-white transition-colors duration-200 text-left">
                   portopresentes@portopresentes.com
-                </a>
+                </button>
               </li>
               <li>
-                <a href="https://wa.me/5547996773591" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">
+                <button onClick={handleWhatsAppClick} className="hover:text-white transition-colors duration-200 text-left">
                   (47) 99677-3591 - Carol
-                </a>
+                </button>
               </li>
               <li className="text-sm">
                 Horário: Seg-Sex 8h-18h

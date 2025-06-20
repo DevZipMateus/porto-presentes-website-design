@@ -1,4 +1,3 @@
-
 export const Contact = () => {
   const handleWhatsAppClick = () => {
     const message = "Olá! Vim através do site e gostaria de saber mais sobre os produtos da Porto Presentes e Souvenirs.";
@@ -8,6 +7,12 @@ export const Contact = () => {
 
   const handleQuoteClick = () => {
     const message = "Olá! Gostaria de solicitar um orçamento para souvenirs personalizados.";
+    const whatsappUrl = `https://wa.me/5547996773591?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleEmailClick = () => {
+    const message = "Olá! Vim através do site e gostaria de entrar em contato sobre os produtos da Porto Presentes e Souvenirs.";
     const whatsappUrl = `https://wa.me/5547996773591?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
@@ -44,7 +49,7 @@ export const Contact = () => {
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">Email</h4>
                   <button 
-                    onClick={handleWhatsAppClick}
+                    onClick={handleEmailClick}
                     className="text-gray-600 hover:text-gray-900 transition-colors duration-200 cursor-pointer"
                   >
                     portopresentes@portopresentes.com
