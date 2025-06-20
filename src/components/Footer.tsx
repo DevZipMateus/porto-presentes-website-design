@@ -1,29 +1,20 @@
-
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
-
   const handleWhatsAppClick = () => {
     const message = "Olá! Vim através do site e gostaria de saber mais sobre os produtos da Porto Presentes e Souvenirs.";
     const whatsappUrl = `https://wa.me/5547996773591?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
-
   const handleEmailClick = () => {
     const message = "Olá! Vim através do site e gostaria de entrar em contato sobre os produtos da Porto Presentes e Souvenirs.";
     const whatsappUrl = `https://wa.me/5547996773591?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
-
-  return (
-    <footer className="bg-gray-900 text-white py-12">
+  return <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <img 
-              src="/lovable-uploads/bf7f357b-38ff-4469-ac34-d7ca5a9a7031.png" 
-              alt="Porto Presentes e Souvenirs" 
-              className="h-12 w-auto mb-4 filter brightness-0 invert"
-            />
+            
             <p className="text-gray-300 mb-4 max-w-md">
               Souvenirs temáticos e presentes personalizados que capturam a essência do Brasil. 
               Desde 2022 conectando lojistas a produtos únicos e memoráveis.
@@ -42,42 +33,37 @@ export const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Navegação</h3>
             <ul className="space-y-2">
               <li>
-                <button 
-                  onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-300 hover:text-white transition-colors duration-200 text-left"
-                >
+                <button onClick={() => document.getElementById('hero')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="text-gray-300 hover:text-white transition-colors duration-200 text-left">
                   Início
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => document.getElementById('sobre')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-300 hover:text-white transition-colors duration-200 text-left"
-                >
+                <button onClick={() => document.getElementById('sobre')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="text-gray-300 hover:text-white transition-colors duration-200 text-left">
                   Sobre
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-300 hover:text-white transition-colors duration-200 text-left"
-                >
+                <button onClick={() => document.getElementById('servicos')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="text-gray-300 hover:text-white transition-colors duration-200 text-left">
                   Serviços
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => document.getElementById('produtos')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-300 hover:text-white transition-colors duration-200 text-left"
-                >
+                <button onClick={() => document.getElementById('produtos')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="text-gray-300 hover:text-white transition-colors duration-200 text-left">
                   Produtos
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-300 hover:text-white transition-colors duration-200 text-left"
-                >
+                <button onClick={() => document.getElementById('contato')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="text-gray-300 hover:text-white transition-colors duration-200 text-left">
                   Contato
                 </button>
               </li>
@@ -118,6 +104,5 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
