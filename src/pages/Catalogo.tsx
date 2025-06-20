@@ -209,6 +209,56 @@ const Catalogo = () => {
       id: 40,
       image: "/lovable-uploads/84fd23a5-a6ac-4091-9411-b9c153cc8e0b.png",
       title: "Canecas de Chopp Cristal - Linha Arte Clássica"
+    },
+    {
+      id: 41,
+      image: "/lovable-uploads/0e944865-5d40-4f90-9b17-3918a7b3b985.png",
+      title: "Canecas Grandes Transparentes - Temas Regionais Especiais"
+    },
+    {
+      id: 42,
+      image: "/lovable-uploads/4a5626c6-019b-4438-a7a1-7eb437d63a88.png",
+      title: "Copos Cerveja Pequenos - Eu Amo Balneário Camboriú"
+    },
+    {
+      id: 43,
+      image: "/lovable-uploads/c1e1032d-bdf1-4006-83c2-42f700d776fc.png",
+      title: "Copos Cerveja Altos - Linha Temática Premium"
+    },
+    {
+      id: 44,
+      image: "/lovable-uploads/455e0ae8-d678-4cf1-9df5-84b0c93e7b0b.png",
+      title: "Copos Cerveja - Cristo Redentor, Bondinho e Big Wheel"
+    },
+    {
+      id: 45,
+      image: "/lovable-uploads/ad105558-2036-4900-9995-3db0153c6a0e.png",
+      title: "Taças - Eu Amo Balneário Camboriú e Cristo Redentor"
+    },
+    {
+      id: 46,
+      image: "/lovable-uploads/e86a9329-f8c9-44a8-b8ef-68ee0135f267.png",
+      title: "Taças - Bondinho, Big Wheel e Temas Regionais"
+    },
+    {
+      id: 47,
+      image: "/lovable-uploads/90d7f849-7b3a-4901-8896-0d6a9b664e73.png",
+      title: "Copos Cerveja Pilsen - Linha Arte Regional Completa"
+    },
+    {
+      id: 48,
+      image: "/lovable-uploads/6acdd777-65c5-4495-a60d-67fa7eabc8ed.png",
+      title: "Copos Cerveja - Temas Regionais e Aventura"
+    },
+    {
+      id: 49,
+      image: "/lovable-uploads/9cdf41ff-6b0b-4812-9cc4-6950cee5b9b3.png",
+      title: "Taças Cristal - Eu Amo Balneário Camboriú e Cristo"
+    },
+    {
+      id: 50,
+      image: "/lovable-uploads/eca2f232-736a-4722-8153-beabca94f3e3.png",
+      title: "Taças Elegantes - Temas Regionais Premium"
     }
   ];
 
