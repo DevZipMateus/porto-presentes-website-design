@@ -378,9 +378,7 @@ export const ProductCarousel = () => {
   return <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Nossos Produtos em Destaque
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nosso catálogo de produtos</h2>
           <div className="w-24 h-1 bg-gray-900 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">Conheça nossa linha completa de souvenirs e canecas temáticas regionais, para mais informaçoes sobre preço, modelos e disponibilidade entre em contato.</p>
         </div>
