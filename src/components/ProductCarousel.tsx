@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 export const ProductCarousel = () => {
@@ -380,10 +381,6 @@ export const ProductCarousel = () => {
     setCurrentIndex(currentIndex === products.length - 1 ? 0 : currentIndex + 1);
   };
   
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
-  
   return <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
@@ -423,22 +420,6 @@ export const ProductCarousel = () => {
           <button onClick={goToNext} className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110" aria-label="Próxima imagem">
             <ChevronRight className="h-6 w-6" />
           </button>
-
-          {/* Dots Indicator */}
-          <div className="flex justify-center mt-8 space-x-2 flex-wrap">
-            {products.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                  index === currentIndex
-                    ? 'bg-gray-900 scale-110'
-                    : 'bg-gray-400 hover:bg-gray-600'
-                }`}
-                aria-label={`Ir para slide ${index + 1}`}
-              />
-            ))}
-          </div>
         </div>
 
         {/* CTA Button */}
