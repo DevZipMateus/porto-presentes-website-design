@@ -1,4 +1,3 @@
-
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -110,6 +109,56 @@ const Catalogo = () => {
       id: 20,
       image: "/lovable-uploads/eecd52fe-d390-40b8-8e6a-adce7a817831.png",
       title: "Canecas Amarelas - Linha Regional Completa"
+    },
+    {
+      id: 21,
+      image: "/lovable-uploads/7ee5a9af-30b3-4b2c-88bc-4626ff46a2a6.png",
+      title: "Canecas Temáticas Azul Claro - Linha Regional"
+    },
+    {
+      id: 22,
+      image: "/lovable-uploads/063b7016-1f88-407c-98fa-775ed5fa5589.png",
+      title: "Canecas Temáticas Roxas - Linha Regional"
+    },
+    {
+      id: 23,
+      image: "/lovable-uploads/98e63421-80f7-4e13-a6ea-9e5e6c8122c1.png",
+      title: "Canecas Temáticas Rosa - Linha Regional"
+    },
+    {
+      id: 24,
+      image: "/lovable-uploads/ad7b8098-f7d0-47e4-b469-5664f1fa0435.png",
+      title: "Copos Transparentes - Linha Temática Regional"
+    },
+    {
+      id: 25,
+      image: "/lovable-uploads/8d46226a-4d6c-4211-9fd1-037f5f0b572a.png",
+      title: "Copos Shot - Linha Temática Regional"
+    },
+    {
+      id: 26,
+      image: "/lovable-uploads/80f8e31b-0d2e-4bff-9df7-b4929943d016.png",
+      title: "Copos Baixos Transparentes - Linha Temática"
+    },
+    {
+      id: 27,
+      image: "/lovable-uploads/f3a021e7-4f2e-4b7d-b106-94edcc9c208c.png",
+      title: "Copos Altos Transparentes - Linha Regional"
+    },
+    {
+      id: 28,
+      image: "/lovable-uploads/80376178-f983-4b52-9224-a1307cbeff7c.png",
+      title: "Copos Shot Transparentes - Mix Regional"
+    },
+    {
+      id: 29,
+      image: "/lovable-uploads/7ee5a883-4364-4e72-89f0-71d9f95d80a3.png",
+      title: "Copos Baixos - Linha Temática Completa"
+    },
+    {
+      id: 30,
+      image: "/lovable-uploads/bbbfe442-5abc-4b0c-98d7-5e5b4ef5db47.png",
+      title: "Copos Baixos Transparentes - Linha Premium"
     }
   ];
 
