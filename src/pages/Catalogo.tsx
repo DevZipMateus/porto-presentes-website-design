@@ -159,6 +159,56 @@ const Catalogo = () => {
       id: 30,
       image: "/lovable-uploads/bbbfe442-5abc-4b0c-98d7-5e5b4ef5db47.png",
       title: "Copos Baixos Transparentes - Linha Premium"
+    },
+    {
+      id: 31,
+      image: "/lovable-uploads/0adfd06f-adfa-4b9c-a914-d885d51054a1.png",
+      title: "Copos Altos Transparentes - Linha Temática Regional"
+    },
+    {
+      id: 32,
+      image: "/lovable-uploads/6651d732-abe3-40b1-ac82-e439a57f904b.png",
+      title: "Copos Shot Transparentes - Temas do Rio de Janeiro"
+    },
+    {
+      id: 33,
+      image: "/lovable-uploads/b3580274-2db9-4ff3-991d-d186cd829f28.png",
+      title: "Canecas de Chopp Transparentes - Linha Regional"
+    },
+    {
+      id: 34,
+      image: "/lovable-uploads/f9a019ec-6800-4afa-a507-12131bda2118.png",
+      title: "Copos Arte em Faixa - Linha Temática Especial"
+    },
+    {
+      id: 35,
+      image: "/lovable-uploads/8d601e3c-6489-4341-af28-c9aff19c4f82.png",
+      title: "Caipirinhas Transparentes - Linha Regional Rio"
+    },
+    {
+      id: 36,
+      image: "/lovable-uploads/81bd13da-3106-47eb-ac47-b08ac5b9df90.png",
+      title: "Caipirinhas - Linha Aventura e Regional"
+    },
+    {
+      id: 37,
+      image: "/lovable-uploads/5ce576f4-4214-42b5-9c68-f136dffc387c.png",
+      title: "Canecas de Chopp - Linha Arte Regional"
+    },
+    {
+      id: 38,
+      image: "/lovable-uploads/e821e883-ebeb-441c-8d69-5a4c8c91a107.png",
+      title: "Canecas de Chopp - Linha Aventura Tropical"
+    },
+    {
+      id: 39,
+      image: "/lovable-uploads/5d181641-fac0-4c72-98af-66389f41baf9.png",
+      title: "Canecas de Chopp com Alça - Arte Regional"
+    },
+    {
+      id: 40,
+      image: "/lovable-uploads/84fd23a5-a6ac-4091-9411-b9c153cc8e0b.png",
+      title: "Canecas de Chopp Cristal - Linha Arte Clássica"
     }
   ];
 
