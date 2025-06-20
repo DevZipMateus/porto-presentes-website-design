@@ -1,5 +1,12 @@
 
+
 export const Services = () => {
+  const handleQuoteClick = () => {
+    const message = "Olá! Gostaria de solicitar um orçamento para souvenirs personalizados.";
+    const whatsappUrl = `https://wa.me/5547996773591?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  };
+
   const services = [
     {
       title: "Diversos Souvenirs",
@@ -78,7 +85,7 @@ export const Services = () => {
 
               <div className="mt-8 text-center">
                 <button 
-                  onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={handleQuoteClick}
                   className="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors duration-300 w-full font-medium"
                   aria-label={`Solicitar orçamento para ${service.title}`}
                 >
@@ -118,3 +125,4 @@ export const Services = () => {
     </section>
   );
 };
+
