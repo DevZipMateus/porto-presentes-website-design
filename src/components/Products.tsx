@@ -1,17 +1,45 @@
+import { useState } from 'react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 export const Products = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
   const productCategories = [
     {
       title: "Souvenirs Regionais",
       description: "Produtos que representam a cultura e tradições locais",
       image: "🏛️",
-      items: ["Miniaturas de monumentos", "Produtos artesanais", "Itens temáticos regionais", "Objetos decorativos"]
+      items: ["Miniaturas de monumentos", "Produtos artesanais", "Itens temáticos regionais", "Objetos decorativos"],
+      gallery: [
+        {
+          src: "/lovable-uploads/bee31944-278f-47cf-a858-817a90fe4568.png",
+          alt: "Ímã de Gramado e Canela com ilustração do famoso prédio histórico"
+        },
+        {
+          src: "/lovable-uploads/63c63f19-bfb2-4f70-973e-d1e9e3023b48.png",
+          alt: "Prato decorativo de Curitiba com pontos turísticos da cidade"
+        },
+        {
+          src: "/lovable-uploads/3bf2ec03-0c02-4ee4-8145-1c17df2b79d7.png",
+          alt: "Caneca de vidro pequena com marco histórico impresso"
+        }
+      ]
     },
     {
       title: "Presentes Personalizados",
       description: "Produtos customizados com a identidade do seu estabelecimento",
       image: "🎁",
-      items: ["Chaveiros personalizados", "Canecas temáticas", "Camisetas exclusivas", "Ímãs de geladeira"]
+      items: ["Chaveiros personalizados", "Canecas temáticas", "Camisetas exclusivas", "Ímãs de geladeira"],
+      gallery: [
+        {
+          src: "/lovable-uploads/0deec3d1-ee84-4b05-9ef1-92db5afd235e.png",
+          alt: "Canecas personalizadas e copos de vidro com temas regionais"
+        },
+        {
+          src: "/lovable-uploads/ed884fbc-e190-4fe3-8b77-a16e00d1b6b9.png",
+          alt: "Canecas coloridas do Brasil em diversas cores - azul, verde, rosa e branca"
+        }
+      ]
     },
     {
       title: "Lembranças Turísticas",
@@ -52,6 +80,97 @@ export const Products = () => {
           </p>
         </div>
 
+        {/* Product Gallery Section */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Galeria de Produtos</h3>
+          
+          <Carousel className="w-full max-w-5xl mx-auto">
+            <CarouselContent>
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img 
+                      src="/lovable-uploads/bee31944-278f-47cf-a858-817a90fe4568.png"
+                      alt="Ímã de Gramado e Canela"
+                      className="w-full h-64 object-cover"
+                    />
+                    <div className="p-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">Ímã Regional</h4>
+                      <p className="text-sm text-gray-600">Gramado e Canela - Souvenir regional exclusivo</p>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+              
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img 
+                      src="/lovable-uploads/0deec3d1-ee84-4b05-9ef1-92db5afd235e.png"
+                      alt="Canecas e copos personalizados"
+                      className="w-full h-64 object-cover"
+                    />
+                    <div className="p-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">Canecas Personalizadas</h4>
+                      <p className="text-sm text-gray-600">Canecas e copos com temas regionais</p>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+              
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img 
+                      src="/lovable-uploads/ed884fbc-e190-4fe3-8b77-a16e00d1b6b9.png"
+                      alt="Canecas coloridas do Brasil"
+                      className="w-full h-64 object-cover"
+                    />
+                    <div className="p-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">Canecas Brasil</h4>
+                      <p className="text-sm text-gray-600">Coleção colorida com temas brasileiros</p>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+              
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img 
+                      src="/lovable-uploads/63c63f19-bfb2-4f70-973e-d1e9e3023b48.png"
+                      alt="Prato decorativo de Curitiba"
+                      className="w-full h-64 object-cover"
+                    />
+                    <div className="p-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">Prato Decorativo</h4>
+                      <p className="text-sm text-gray-600">Curitiba - Arte com pontos turísticos</p>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+              
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img 
+                      src="/lovable-uploads/3bf2ec03-0c02-4ee4-8145-1c17df2b79d7.png"
+                      alt="Caneca de vidro com marco histórico"
+                      className="w-full h-64 object-cover"
+                    />
+                    <div className="p-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">Caneca de Vidro</h4>
+                      <p className="text-sm text-gray-600">Mini caneca com marco histórico</p>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {productCategories.map((category, index) => (
             <div 
@@ -75,6 +194,30 @@ export const Products = () => {
                     </div>
                   ))}
                 </div>
+
+                {category.gallery && (
+                  <div className="mb-6">
+                    <button
+                      onClick={() => setSelectedCategory(selectedCategory === category.title ? null : category.title)}
+                      className="text-sm text-gray-600 hover:text-gray-900 mb-3 underline"
+                    >
+                      {selectedCategory === category.title ? 'Ocultar exemplos' : 'Ver exemplos'}
+                    </button>
+                    
+                    {selectedCategory === category.title && (
+                      <div className="grid grid-cols-2 gap-2 mt-3">
+                        {category.gallery.map((img, imgIndex) => (
+                          <img
+                            key={imgIndex}
+                            src={img.src}
+                            alt={img.alt}
+                            className="w-full h-20 object-cover rounded-lg"
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
 
                 <button 
                   onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
