@@ -1,3 +1,4 @@
+
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -485,22 +486,23 @@ const Catalogo = () => {
                   key={product.id}
                   className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
                 >
-                  <div className="aspect-square overflow-hidden">
+                  <div className="w-full h-64 sm:h-72 md:h-80 overflow-hidden bg-gray-50 p-4">
                     <img
                       src={product.image}
                       alt={product.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
                     />
                   </div>
                   
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 text-center leading-tight">
                       {product.title}
                     </h3>
                     
                     <button
                       onClick={handleContactClick}
-                      className="w-full bg-gray-900 text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors duration-300 font-medium"
+                      className="w-full bg-gray-900 text-white py-3 px-4 sm:px-6 rounded-lg hover:bg-gray-800 transition-colors duration-300 font-medium text-sm sm:text-base"
                     >
                       Para mais informações entre em contato
                     </button>
