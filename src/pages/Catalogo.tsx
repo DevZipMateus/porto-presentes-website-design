@@ -359,6 +359,56 @@ const Catalogo = () => {
       id: 70,
       image: "/lovable-uploads/60c32748-6151-44f9-a536-469d244fa2d5.png",
       title: "Canecas Pretas Especiais - Mix Temático Regional"
+    },
+    {
+      id: 71,
+      image: "/lovable-uploads/fdbadd90-8ea3-4054-b888-8751722362fe.png",
+      title: "Pratos Decorativos - Cristo Redentor, Bondinho e Eu Amo B. Camboriú"
+    },
+    {
+      id: 72,
+      image: "/lovable-uploads/eb18370f-c3ba-4910-a643-9fa1549d17e4.png",
+      title: "Canecas Azuis - Cristo Redentor, Bondinho e Eu Amo B. Camboriú"
+    },
+    {
+      id: 73,
+      image: "/lovable-uploads/e39b2ba0-0d21-45e8-b5b8-fedf22302fb3.png",
+      title: "Canecas Azul Claro - Temas Regionais Premium"
+    },
+    {
+      id: 74,
+      image: "/lovable-uploads/6f92c87e-e8ae-4b34-a9a4-d6dd438dd575.png",
+      title: "Canecas Rosa - Aventura, Cristo Luz e Oceanic Aquarium"
+    },
+    {
+      id: 75,
+      image: "/lovable-uploads/1bf94b0d-6f6b-4831-a1f2-2db382b94416.png",
+      title: "Canecas Ultra Deck - Linha Premium Especial"
+    },
+    {
+      id: 76,
+      image: "/lovable-uploads/c1fc8751-43f6-411c-8886-56a9f9a4e9f7.png",
+      title: "Canecas Coloridas Ultra Deck - Mix Completo"
+    },
+    {
+      id: 77,
+      image: "/lovable-uploads/dccd33ab-dbff-463b-ac50-7467caeb9402.png",
+      title: "Canecas Pretas Premium - Temas Regionais Clássicos"
+    },
+    {
+      id: 78,
+      image: "/lovable-uploads/8ff925e9-3a7c-481c-a597-e6db8284373c.png",
+      title: "Canecas Pretas Mix - Oceanic, Adventure e Space"
+    },
+    {
+      id: 79,
+      image: "/lovable-uploads/b845313e-a052-420f-8ccb-da0b226a6c75.png",
+      title: "Canecas Coloridas Premium - Adventure e Regional Mix"
+    },
+    {
+      id: 80,
+      image: "/lovable-uploads/87500dfb-6a04-4fc0-a9dc-75d04bc6e336.png",
+      title: "Canecas Azul Claro Mix - Eu Amo B. Camboriú e Adventure"
     }
   ];
 
