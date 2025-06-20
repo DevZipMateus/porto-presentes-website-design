@@ -1,10 +1,11 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +17,12 @@ export const Navbar = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      // Se não estiver na página inicial, navegue para lá primeiro
+      window.location.href = `/#${sectionId}`;
+      return;
+    }
+    
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({
@@ -27,11 +34,12 @@ export const Navbar = () => {
   };
 
   const navLinks = [
-    { name: 'Início', href: 'hero' },
-    { name: 'Sobre', href: 'sobre' },
-    { name: 'Serviços', href: 'servicos' },
-    { name: 'Produtos', href: 'produtos' },
-    { name: 'Contato', href: 'contato' },
+    { name: 'Início', href: 'hero', type: 'scroll' },
+    { name: 'Sobre', href: 'sobre', type: 'scroll' },
+    { name: 'Serviços', href: 'servicos', type: 'scroll' },
+    { name: 'Produtos', href: 'produtos', type: 'scroll' },
+    { name: 'Catálogo', href: '/catalogo', type: 'link' },
+    { name: 'Contato', href: 'contato', type: 'scroll' },
   ];
 
   return (
@@ -41,27 +49,39 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0 cursor-pointer" onClick={() => scrollToSection('hero')}>
+          <Link to="/" className="flex-shrink-0 cursor-pointer">
             <img 
               src="/lovable-uploads/bf7f357b-38ff-4469-ac34-d7ca5a9a7031.png" 
               alt="Porto Presentes e Souvenirs - Logo" 
               className="h-10 w-auto object-contain"
             />
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navLinks.map((link) => (
-                <button
-                  key={link.name}
-                  onClick={() => scrollToSection(link.href)}
-                  className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group"
-                  aria-label={`Navegar para ${link.name}`}
-                >
-                  {link.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
-                </button>
+                link.type === 'link' ? (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group"
+                    aria-label={`Navegar para ${link.name}`}
+                  >
+                    {link.name}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
+                  </Link>
+                ) : (
+                  <button
+                    key={link.name}
+                    onClick={() => scrollToSection(link.href)}
+                    className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group"
+                    aria-label={`Navegar para ${link.name}`}
+                  >
+                    {link.name}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
+                  </button>
+                )
               ))}
             </div>
           </div>
@@ -85,14 +105,26 @@ export const Navbar = () => {
         <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => scrollToSection(link.href)}
-                className="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200"
-                aria-label={`Navegar para ${link.name}`}
-              >
-                {link.name}
-              </button>
+              link.type === 'link' ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200"
+                  aria-label={`Navegar para ${link.name}`}
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <button
+                  key={link.name}
+                  onClick={() => scrollToSection(link.href)}
+                  className="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200"
+                  aria-label={`Navegar para ${link.name}`}
+                >
+                  {link.name}
+                </button>
+              )
             ))}
           </div>
         </div>
