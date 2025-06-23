@@ -15,9 +15,9 @@ const Index = () => {
   return (
     <>
       <SEOHead />
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white overflow-x-hidden">
         <Navbar />
-        <main>
+        <main className="relative">
           <Hero />
           <About />
           <Services />
