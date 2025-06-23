@@ -6,6 +6,12 @@ export const CityCatalogsSection = () => {
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
+  const handleCityClick = (cityName: string) => {
+    const message = `Olá! Gostaria de saber mais sobre o catálogo de ${cityName}.`;
+    const whatsappUrl = `https://wa.me/5547996773591?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  };
+
   const cities = [
     "Balneário Camboriú - SC",
     "Blumenau - SC", 
@@ -51,7 +57,11 @@ export const CityCatalogsSection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-12">
           {cities.map((city, index) => (
-            <div key={index} className="bg-gray-50 rounded-lg p-4 text-center hover:bg-gray-100 transition-colors duration-200">
+            <div 
+              key={index} 
+              onClick={() => handleCityClick(city)}
+              className="bg-gray-50 rounded-lg p-4 text-center hover:bg-gray-100 transition-colors duration-200 cursor-pointer hover:shadow-md"
+            >
               <p className="text-sm sm:text-base text-gray-800 font-medium">{city}</p>
             </div>
           ))}
