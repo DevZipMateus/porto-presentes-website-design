@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import type { CarouselApi } from "@/components/ui/carousel";
@@ -205,9 +204,42 @@ export const Products = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {productCategories.map((category, index) => <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              
-            </div>)}
+          {productCategories.map((category, index) => (
+            <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="p-8">
+                <div className="text-center mb-6">
+                  <div className="text-4xl mb-4">{category.image}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{category.title}</h3>
+                  <p className="text-gray-600">{category.description}</p>
+                </div>
+                
+                <ul className="space-y-2">
+                  {category.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="flex items-center text-gray-700">
+                      <span className="w-2 h-2 bg-gray-400 rounded-full mr-3 flex-shrink-0"></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                
+                {category.gallery && (
+                  <div className="mt-6">
+                    <div className="grid grid-cols-2 gap-2">
+                      {category.gallery.slice(0, 2).map((image, imageIndex) => (
+                        <div key={imageIndex} className="aspect-square rounded-lg overflow-hidden bg-gray-100">
+                          <img 
+                            src={image.src} 
+                            alt={image.alt}
+                            className="w-full h-full object-contain p-2"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="mt-16 bg-white rounded-2xl p-12">
