@@ -1,4 +1,3 @@
-
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -322,27 +321,27 @@ const Catalogo = () => {
     <div className="min-h-screen bg-white">
       <Navbar />
       
-      <main className="pt-20">
+      <main className="pt-16 sm:pt-20">
         {/* Hero Section */}
-        <section className="bg-gray-50 py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <section className="bg-gray-50 py-12 sm:py-16">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 text-center">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
               Catálogo de Produtos
             </h1>
-            <div className="w-24 h-1 bg-gray-900 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <div className="w-16 sm:w-20 lg:w-24 h-1 bg-gray-900 mx-auto mb-6 sm:mb-8"></div>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-2">
               Conheça nossa linha completa de souvenirs e presentes personalizados. Produtos de qualidade, para informação sobre preço clique no botão abaixo da imagem escolhida.
             </p>
           </div>
         </section>
 
         {/* Products Grid */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section className="py-12 sm:py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {products.map(product => (
-                <div key={product.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                  <div className="w-full h-64 sm:h-72 md:h-80 overflow-hidden bg-gray-50 p-4">
+                <div key={product.id} className="bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div className="w-full aspect-square relative overflow-hidden bg-gray-50 p-2 sm:p-3 lg:p-4">
                     <img 
                       src={product.image} 
                       alt={product.title} 
@@ -351,14 +350,14 @@ const Catalogo = () => {
                     />
                   </div>
                   
-                  <div className="p-6">
-                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 text-center leading-tight">
+                  <div className="p-4 sm:p-6">
+                    <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 text-center leading-tight">
                       {product.title}
                     </h3>
                     
                     <button 
                       onClick={handleContactClick} 
-                      className="w-full bg-gray-900 text-white py-3 px-4 sm:px-6 rounded-lg hover:bg-gray-800 transition-colors duration-300 font-medium text-sm sm:text-base"
+                      className="w-full bg-gray-900 text-white py-2.5 sm:py-3 px-3 sm:px-4 lg:px-6 rounded-lg hover:bg-gray-800 transition-colors duration-300 font-medium text-xs sm:text-sm lg:text-base"
                     >
                       Para mais informações entre em contato
                     </button>
@@ -370,18 +369,18 @@ const Catalogo = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="bg-gray-900 text-white py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        <section className="bg-gray-900 text-white py-12 sm:py-16">
+          <div className="max-w-4xl mx-auto px-3 sm:px-4 lg:px-8 text-center">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
               Precisa de Algo Personalizado?
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 px-2">
               Desenvolvemos produtos exclusivos com sua arte e tema desejado. 
               Entre em contato e vamos criar algo único para seu negócio.
             </p>
             <button 
               onClick={handleContactClick} 
-              className="bg-white text-gray-900 py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-300 font-semibold text-lg"
+              className="bg-white text-gray-900 py-3 sm:py-4 px-6 sm:px-8 rounded-lg hover:bg-gray-100 transition-colors duration-300 font-semibold text-base sm:text-lg"
             >
               Solicitar Orçamento Personalizado
             </button>

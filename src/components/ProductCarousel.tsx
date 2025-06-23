@@ -126,36 +126,37 @@ export const ProductCarousel = () => {
   };
 
   return (
-    <section className="py-12 sm:py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 px-2">
+    <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+        <div className="text-center mb-6 sm:mb-8 lg:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4 px-2">
             Nosso catálogo de produtos
           </h2>
-          <div className="w-16 sm:w-20 lg:w-24 h-1 bg-gray-900 mx-auto mb-4 sm:mb-6"></div>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-4">
+          <div className="w-12 sm:w-16 lg:w-20 xl:w-24 h-1 bg-gray-900 mx-auto mb-3 sm:mb-4 lg:mb-6"></div>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-2 sm:px-4">
             Conheça nossa linha completa de souvenirs e canecas temáticas regionais, para mais informações sobre preço, modelos e disponibilidade entre em contato.
           </p>
         </div>
 
         <div className="relative max-w-5xl mx-auto">
           {/* Carousel Container */}
-          <div className="relative overflow-hidden rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl">
+          <div className="relative overflow-hidden rounded-lg sm:rounded-xl lg:rounded-2xl shadow-lg sm:shadow-xl lg:shadow-2xl">
             <div 
               className="flex transition-transform duration-500 ease-in-out" 
               style={{transform: `translateX(-${currentIndex * 100}%)`}}
             >
               {products.map(product => (
                 <div key={product.id} className="w-full flex-shrink-0">
-                  <div className="relative aspect-square sm:aspect-[4/3] lg:aspect-[16/10]">
+                  <div className="relative aspect-square sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/10] xl:aspect-[2/1]">
                     <img 
                       src={product.image} 
                       alt={product.title} 
-                      className="w-full h-full object-contain bg-white p-2 sm:p-4" 
+                      className="w-full h-full object-contain bg-white p-1 sm:p-2 md:p-3 lg:p-4" 
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-20 flex items-end">
-                      <div className="p-3 sm:p-6 text-white w-full">
-                        <h3 className="text-sm sm:text-base lg:text-lg font-semibold">{product.title}</h3>
+                      <div className="p-2 sm:p-3 md:p-4 lg:p-6 text-white w-full">
+                        <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold">{product.title}</h3>
                       </div>
                     </div>
                   </div>
@@ -167,26 +168,26 @@ export const ProductCarousel = () => {
           {/* Navigation Arrows */}
           <button 
             onClick={goToPrevious} 
-            className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 sm:p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-10" 
+            className="absolute left-1 sm:left-2 lg:left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-1.5 sm:p-2 lg:p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-10" 
             aria-label="Imagem anterior"
           >
-            <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
+            <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4 lg:h-6 lg:w-6" />
           </button>
 
           <button 
             onClick={goToNext} 
-            className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 sm:p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-10" 
+            className="absolute right-1 sm:right-2 lg:right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-1.5 sm:p-2 lg:p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-10" 
             aria-label="Próxima imagem"
           >
-            <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
+            <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 lg:h-6 lg:w-6" />
           </button>
         </div>
 
         {/* CTA Button */}
-        <div className="text-center mt-8 sm:mt-12 px-4">
+        <div className="text-center mt-6 sm:mt-8 lg:mt-12 px-2 sm:px-4">
           <a 
             href="/catalogo" 
-            className="inline-block w-full sm:w-auto bg-gray-900 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-gray-800 transition-colors duration-300 font-semibold text-base sm:text-lg"
+            className="inline-block w-full sm:w-auto bg-gray-900 text-white px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 rounded-lg hover:bg-gray-800 transition-colors duration-300 font-semibold text-sm sm:text-base lg:text-lg"
           >
             Ver Catálogo Completo
           </a>
