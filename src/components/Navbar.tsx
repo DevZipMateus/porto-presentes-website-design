@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
@@ -37,7 +38,6 @@ export const Navbar = () => {
     { name: 'Início', href: 'hero', type: 'scroll' },
     { name: 'Sobre', href: 'sobre', type: 'scroll' },
     { name: 'Serviços', href: 'servicos', type: 'scroll' },
-    { name: 'Produtos', href: 'produtos', type: 'scroll' },
     { name: 'Produtos', href: '/produtos', type: 'link' },
     { name: 'Contato', href: 'contato', type: 'scroll' },
   ];
