@@ -1,18 +1,13 @@
-import { useCallback, useEffect } from 'react';
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { ProductCard } from "@/components/ProductCard";
-import { useImagePreloader } from "@/hooks/useImagePreloader";
 
 const Catalogo = () => {
-  const { preloadImages } = useImagePreloader();
-
-  const handleContactClick = useCallback(() => {
+  const handleContactClick = () => {
     const message = "Olá! Vi um produto no catálogo e gostaria de mais informações.";
     const whatsappUrl = `https://wa.me/5547996773591?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-  }, []);
+  };
 
   const products = [
     {
@@ -322,23 +317,6 @@ const Catalogo = () => {
     }
   ];
 
-  // Preload first batch of images on component mount
-  useEffect(() => {
-    const firstBatchImages = products.slice(0, 6).map(p => p.image);
-    preloadImages(firstBatchImages);
-  }, [preloadImages, products]);
-
-  // Smart preloading: when an image becomes visible, preload the next few
-  const handleImageVisible = useCallback((currentImageSrc: string) => {
-    const currentIndex = products.findIndex(p => p.image === currentImageSrc);
-    if (currentIndex !== -1) {
-      const nextImages = products
-        .slice(currentIndex + 1, currentIndex + 4)
-        .map(p => p.image);
-      preloadImages(nextImages);
-    }
-  }, [products, preloadImages]);
-
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -362,12 +340,29 @@ const Catalogo = () => {
           <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {products.map(product => (
-                <ProductCard
-                  key={product.id}
-                  product={product}
-                  onContactClick={handleContactClick}
-                  onImageVisible={handleImageVisible}
-                />
+                <div key={product.id} className="bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div className="w-full aspect-square relative overflow-hidden bg-gray-50 p-2 sm:p-3 lg:p-4">
+                    <img 
+                      src={product.image} 
+                      alt={product.title} 
+                      className="w-full h-full object-contain hover:scale-105 transition-transform duration-300" 
+                      loading="lazy" 
+                    />
+                  </div>
+                  
+                  <div className="p-4 sm:p-6">
+                    <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 text-center leading-tight">
+                      {product.title}
+                    </h3>
+                    
+                    <button 
+                      onClick={handleContactClick} 
+                      className="w-full bg-gray-900 text-white py-2.5 sm:py-3 px-3 sm:px-4 lg:px-6 rounded-lg hover:bg-gray-800 transition-colors duration-300 font-medium text-xs sm:text-sm lg:text-base"
+                    >
+                      Para mais informações entre em contato
+                    </button>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
