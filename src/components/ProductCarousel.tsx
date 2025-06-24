@@ -1,12 +1,24 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Skeleton } from '@/components/ui/skeleton';
+
+interface Product {
+  id: number;
+  image: string;
+  title: string;
+}
+
+interface ImageState {
+  [key: string]: 'loading' | 'loaded' | 'error';
+}
 
 export const ProductCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [imageStates, setImageStates] = useState<ImageState>({});
 
-  // First 20 products from the new catalog
-  const products = [
+  // Memoized products list to prevent unnecessary re-renders
+  const products = useMemo<Product[]>(() => [
     {
       id: 1,
       image: "/lovable-uploads/produtos/produtos/580340088468056.jpeg",
@@ -107,7 +119,40 @@ export const ProductCarousel = () => {
       image: "/lovable-uploads/produtos/produtos/1219112736162937.jpeg",
       title: "Produto 20"
     }
-  ];
+  ], []);
+
+  // Get indices for current, previous, and next images
+  const getAdjacentIndices = useCallback((index: number) => {
+    const prevIndex = index === 0 ? products.length - 1 : index - 1;
+    const nextIndex = index === products.length - 1 ? 0 : index + 1;
+    return { prevIndex, currentIndex: index, nextIndex };
+  }, [products.length]);
+
+  // Preload images function
+  const preloadImage = useCallback((src: string) => {
+    if (imageStates[src] === 'loaded' || imageStates[src] === 'loading') return;
+
+    setImageStates(prev => ({ ...prev, [src]: 'loading' }));
+
+    const img = new Image();
+    img.onload = () => {
+      setImageStates(prev => ({ ...prev, [src]: 'loaded' }));
+    };
+    img.onerror = () => {
+      setImageStates(prev => ({ ...prev, [src]: 'error' }));
+    };
+    img.src = src;
+  }, [imageStates]);
+
+  // Preload current and adjacent images
+  useEffect(() => {
+    const { prevIndex, currentIndex, nextIndex } = getAdjacentIndices(currentIndex);
+    
+    // Preload current, previous, and next images
+    preloadImage(products[currentIndex].image);
+    preloadImage(products[prevIndex].image);
+    preloadImage(products[nextIndex].image);
+  }, [currentIndex, products, preloadImage, getAdjacentIndices]);
 
   // Auto-advance carousel every 3 seconds
   useEffect(() => {
@@ -117,13 +162,59 @@ export const ProductCarousel = () => {
     return () => clearInterval(interval);
   }, [products.length]);
 
-  const goToPrevious = () => {
+  const goToPrevious = useCallback(() => {
     setCurrentIndex(currentIndex === 0 ? products.length - 1 : currentIndex - 1);
-  };
+  }, [currentIndex, products.length]);
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     setCurrentIndex(currentIndex === products.length - 1 ? 0 : currentIndex + 1);
-  };
+  }, [currentIndex, products.length]);
+
+  // Render optimized carousel item
+  const renderCarouselItem = useCallback((product: Product, isVisible: boolean) => {
+    const imageState = imageStates[product.image] || 'loading';
+    
+    return (
+      <div key={product.id} className="w-full flex-shrink-0">
+        <div className="relative aspect-square sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/10] xl:aspect-[2/1]">
+          {imageState === 'loading' && (
+            <Skeleton className="w-full h-full rounded-lg" />
+          )}
+          {isVisible && imageState !== 'loading' && (
+            <>
+              {imageState === 'loaded' ? (
+                <img 
+                  src={product.image} 
+                  alt={product.title} 
+                  className="w-full h-full object-contain bg-white p-1 sm:p-2 md:p-3 lg:p-4" 
+                  loading="lazy"
+                />
+              ) : (
+                <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-lg">
+                  <p className="text-gray-500 text-sm">Erro ao carregar imagem</p>
+                </div>
+              )}
+              <div className="absolute inset-0 bg-black bg-opacity-20 flex items-end">
+                <div className="p-2 sm:p-3 md:p-4 lg:p-6 text-white w-full">
+                  <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold">{product.title}</h3>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    );
+  }, [imageStates]);
+
+  // Get only the images that need to be rendered
+  const renderableProducts = useMemo(() => {
+    const { prevIndex, nextIndex } = getAdjacentIndices(currentIndex);
+    return [
+      { ...products[prevIndex], index: prevIndex },
+      { ...products[currentIndex], index: currentIndex },
+      { ...products[nextIndex], index: nextIndex }
+    ];
+  }, [currentIndex, products, getAdjacentIndices]);
 
   return (
     <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
@@ -139,29 +230,16 @@ export const ProductCarousel = () => {
         </div>
 
         <div className="relative max-w-5xl mx-auto">
-          {/* Carousel Container */}
+          {/* Optimized Carousel Container */}
           <div className="relative overflow-hidden rounded-lg sm:rounded-xl lg:rounded-2xl shadow-lg sm:shadow-xl lg:shadow-2xl">
             <div 
               className="flex transition-transform duration-500 ease-in-out" 
               style={{transform: `translateX(-${currentIndex * 100}%)`}}
             >
-              {products.map(product => (
-                <div key={product.id} className="w-full flex-shrink-0">
-                  <div className="relative aspect-square sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/10] xl:aspect-[2/1]">
-                    <img 
-                      src={product.image} 
-                      alt={product.title} 
-                      className="w-full h-full object-contain bg-white p-1 sm:p-2 md:p-3 lg:p-4" 
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-20 flex items-end">
-                      <div className="p-2 sm:p-3 md:p-4 lg:p-6 text-white w-full">
-                        <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold">{product.title}</h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+              {products.map((product, index) => {
+                const isVisible = renderableProducts.some(rp => rp.index === index);
+                return renderCarouselItem(product, isVisible);
+              })}
             </div>
           </div>
 
