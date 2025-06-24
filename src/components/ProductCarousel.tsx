@@ -131,7 +131,7 @@ export const ProductCarousel = () => {
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
         <div className="text-center mb-6 sm:mb-8 lg:mb-12">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4 px-2">
-            Nosso catálogo de produtos
+            Nossos produtos
           </h2>
           <div className="w-12 sm:w-16 lg:w-20 xl:w-24 h-1 bg-gray-900 mx-auto mb-3 sm:mb-4 lg:mb-6"></div>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-2 sm:px-4">
@@ -139,6 +139,7 @@ export const ProductCarousel = () => {
           </p>
         </div>
 
+        {/* Carousel Container */}
         <div className="relative max-w-5xl mx-auto">
           {/* Carousel Container */}
           <div className="relative overflow-hidden rounded-lg sm:rounded-xl lg:rounded-2xl shadow-lg sm:shadow-xl lg:shadow-2xl">
@@ -187,7 +188,7 @@ export const ProductCarousel = () => {
         {/* CTA Button */}
         <div className="text-center mt-6 sm:mt-8 lg:mt-12 px-2 sm:px-4">
           <Link 
-            to="/catalogo" 
+            to="/produtos" 
             className="inline-block w-full sm:w-auto bg-gray-900 text-white px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 rounded-lg hover:bg-gray-800 transition-colors duration-300 font-semibold text-sm sm:text-base lg:text-lg"
           >
             Ver Catálogo Completo
