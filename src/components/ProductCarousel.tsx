@@ -1,5 +1,7 @@
+
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const ProductCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -184,12 +186,12 @@ export const ProductCarousel = () => {
 
         {/* CTA Button */}
         <div className="text-center mt-6 sm:mt-8 lg:mt-12 px-2 sm:px-4">
-          <a 
-            href="/catalogo" 
+          <Link 
+            to="/catalogo" 
             className="inline-block w-full sm:w-auto bg-gray-900 text-white px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 rounded-lg hover:bg-gray-800 transition-colors duration-300 font-semibold text-sm sm:text-base lg:text-lg"
           >
             Ver Catálogo Completo
-          </a>
+          </Link>
         </div>
       </div>
     </section>
