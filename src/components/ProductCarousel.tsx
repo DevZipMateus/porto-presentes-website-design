@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -118,11 +117,11 @@ export const ProductCarousel = () => {
   }, [products.length]);
 
   const goToPrevious = () => {
-    setCurrentIndex(currentIndex === 0 ? products.length - 1 : currentIndex - 1);
+    setCurrentIndex(prevIndex => prevIndex === 0 ? products.length - 1 : prevIndex - 1);
   };
 
   const goToNext = () => {
-    setCurrentIndex(currentIndex === products.length - 1 ? 0 : currentIndex + 1);
+    setCurrentIndex(prevIndex => prevIndex === products.length - 1 ? 0 : prevIndex + 1);
   };
 
   return (
