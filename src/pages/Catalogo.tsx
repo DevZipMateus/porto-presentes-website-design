@@ -1,6 +1,9 @@
+
+import { useMemo } from 'react';
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { ProductCard } from "@/components/ProductCard";
 
 const Catalogo = () => {
   const handleContactClick = () => {
@@ -9,7 +12,7 @@ const Catalogo = () => {
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
-  const products = [
+  const products = useMemo(() => [
     {
       id: 1,
       image: "/lovable-uploads/produtos/produtos/580340088468056.jpeg",
@@ -315,7 +318,19 @@ const Catalogo = () => {
       image: "/lovable-uploads/produtos/produtos/24298635316388029.jpeg",
       title: "Produto 61"
     }
-  ];
+  ], []);
+
+  // Get next images for preloading
+  const getNextImages = useMemo(() => (currentIndex: number) => {
+    const nextImages = [];
+    if (currentIndex + 1 < products.length) {
+      nextImages.push(products[currentIndex + 1].image);
+    }
+    if (currentIndex + 2 < products.length) {
+      nextImages.push(products[currentIndex + 2].image);
+    }
+    return nextImages;
+  }, [products]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -339,30 +354,14 @@ const Catalogo = () => {
         <section className="py-12 sm:py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-              {products.map(product => (
-                <div key={product.id} className="bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                  <div className="w-full aspect-square relative overflow-hidden bg-gray-50 p-2 sm:p-3 lg:p-4">
-                    <img 
-                      src={product.image} 
-                      alt={product.title} 
-                      className="w-full h-full object-contain hover:scale-105 transition-transform duration-300" 
-                      loading="lazy" 
-                    />
-                  </div>
-                  
-                  <div className="p-4 sm:p-6">
-                    <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 text-center leading-tight">
-                      {product.title}
-                    </h3>
-                    
-                    <button 
-                      onClick={handleContactClick} 
-                      className="w-full bg-gray-900 text-white py-2.5 sm:py-3 px-3 sm:px-4 lg:px-6 rounded-lg hover:bg-gray-800 transition-colors duration-300 font-medium text-xs sm:text-sm lg:text-base"
-                    >
-                      Para mais informações entre em contato
-                    </button>
-                  </div>
-                </div>
+              {products.map((product, index) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  nextImages={getNextImages(index)}
+                  onContactClick={handleContactClick}
+                  priority={index < 6} // Prioritize first 6 images
+                />
               ))}
             </div>
           </div>
