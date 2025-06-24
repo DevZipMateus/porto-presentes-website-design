@@ -146,7 +146,7 @@ export const ProductCarousel = () => {
 
   // Preload current and adjacent images
   useEffect(() => {
-    const { prevIndex, currentIndex: currentIdx, nextIndex } = getAdjacentIndices(currentIndex);
+    const { prevIndex, currentIndex, nextIndex } = getAdjacentIndices(currentIndex);
     
     // Preload current, previous, and next images
     preloadImage(products[currentIndex].image);
