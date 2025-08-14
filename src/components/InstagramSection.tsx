@@ -3,7 +3,7 @@ import { Instagram } from 'lucide-react';
 
 export const InstagramSection = () => {
   const handleInstagramClick = () => {
-    const instagramUrl = "https://www.instagram.com/porto_preseesouvenirs?igsh=MWQwN2Q4aW51eTg4NA%3D%3D&utm_source=qr";
+    const instagramUrl = "https://www.instagram.com/portopresentesesouvenirs?igsh=aGJpM3JpNHB5c28y";
     window.open(instagramUrl, '_blank', 'noopener,noreferrer');
   };
 
@@ -37,7 +37,7 @@ export const InstagramSection = () => {
                 
                 <div className="text-center sm:text-left">
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
-                    @porto_preseesouvenirs
+                    @portopresentesesouvenirs
                   </h3>
                   <p className="text-sm sm:text-base text-gray-600">
                     Novidades, produtos e inspirações diárias
